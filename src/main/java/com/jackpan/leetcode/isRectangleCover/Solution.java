@@ -53,28 +53,30 @@ class Solution {
         }
         return true;
     }
-}
 
-class Point {
-    int x;
-    int y;
+    class Point {
+        int x;
+        int y;
 
-    public Point(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
-
-    @Override
-    public int hashCode() {
-        return x + y;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj instanceof Point) {
-            Point point2 = (Point) obj;
-            return this.x == point2.x && this.y == point2.y;
+        public Point(int x, int y) {
+            this.x = x;
+            this.y = y;
         }
-        return false;
+
+        @Override
+        public int hashCode() {
+            return x + y;
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof Point) {
+                Point point2 = (Point) obj;
+                return this.x == point2.x && this.y == point2.y;
+            }
+            return false;
+        }
     }
 }
+
+
