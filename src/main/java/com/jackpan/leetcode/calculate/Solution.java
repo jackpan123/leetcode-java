@@ -29,7 +29,6 @@ public class Solution {
                 int j = i;
                 int sum = 0;
                 while (j < chars.length && Character.isDigit(chars[j])) {
-                    System.out.println(chars[j] - '0');
                     sum = sum * 10 + (chars[j] - '0');
                     j++;
                 }
