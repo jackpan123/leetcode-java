@@ -13,19 +13,29 @@ class Solution {
         int i = -1;
         int top = 0;
         int n = arr.length;
-        Stack<Integer> stack = new Stack<Integer>();
         while (top < n) {
             i++;
             top++;
-            stack.push(arr[i]);
             if (arr[i] == 0) {
-                stack.push(arr[i]);
                 top ++;
             }
         }
 
-        for (int j = n - 1; j >= 0; j++) {
-            arr[j] = stack.pop();
+        int j = n - 1;
+        if (top == n + 1) {
+            arr[j] = 0;
+            i--;
+            j--;
+        }
+
+        while (j >= 0) {
+            arr[j] = arr[i];
+            j--;
+            if (arr[i] == 0) {
+                arr[j] = arr[i];
+                j--;
+            }
+            i--;
         }
     }
 }
