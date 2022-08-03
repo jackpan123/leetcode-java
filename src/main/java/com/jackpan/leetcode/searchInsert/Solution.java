@@ -3,7 +3,7 @@ package com.jackpan.leetcode.searchInsert;
 /**
  * Solution操作类
  * 每日打卡第33题 目标（500题）
- *
+ * try more
  * @author JackPan
  * @date 2022/06/09 13:41
  **/
