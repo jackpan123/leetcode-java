@@ -10,46 +10,35 @@ public class Solution {
 
 
     public String reformat(String s) {
-        int charNumber = 0;
+        char[] chars = s.toCharArray();
         int digitNumber = 0;
-        int len = s.length();
-        for (int i = 0; i < len; i++) {
-            if (Character.isLetter(s.charAt(i))) {
-                charNumber++;
-            } else {
+        for (char aChar : chars) {
+            if (Character.isDigit(aChar)) {
                 digitNumber++;
             }
         }
 
-        int diff = charNumber - digitNumber;
-
-        if (Math.abs(diff) > 1) {
+        int charNumber = s.length() - digitNumber;
+        if (Math.abs(digitNumber - charNumber) > 1) {
             return "";
         }
 
-        boolean flag = digitNumber > charNumber;
-        char[] arr = s.toCharArray();
+        boolean isDigitMuch = digitNumber > charNumber;
 
         for (int i = 0, j = 1; i < s.length(); i += 2) {
-            if (Character.isDigit(arr[i]) != flag) {
-                while (Character.isDigit(arr[j]) != flag) {
+            if (Character.isDigit(chars[i]) != isDigitMuch) {
+                while (Character.isDigit(chars[j]) != isDigitMuch) {
                     j += 2;
                 }
-                swap(arr, i, j);
+
+
+                char temp = chars[i];
+                chars[i] = chars[j];
+                chars[j] = temp;
             }
         }
-        return new String(arr);
 
-    }
+        return new String(chars);
 
-    public void swap(char[] arr, int i, int j) {
-        char c = arr[i];
-        arr[i] = arr[j];
-        arr[j] = c;
-    }
-
-    public static void main(String[] args) {
-        Solution solution = new Solution();
-        solution.reformat("covid2019");
     }
 }
