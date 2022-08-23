@@ -1,23 +1,31 @@
 package com.jackpan.leetcode.reverseList;
 
+import java.util.ArrayDeque;
+
 /**
  * 2022-02-17每日打卡第16题 目标（500题）
  */
 public class Solution {
 
     public ListNode reverseList(ListNode head) {
-        ListNode endNode = null;
+        ArrayDeque<ListNode> stack = new ArrayDeque<>();
         while (head != null) {
+            stack.push(head);
             ListNode temp = head.next;
-            head.next = endNode;
-            endNode = head;
+            head.next = null;
             head = temp;
         }
+        ListNode root = new ListNode(0);
+        ListNode rootHead = root;
+        while (!stack.isEmpty()) {
+            rootHead.next = stack.pop();
+            rootHead = rootHead.next;
+        }
 
-        return endNode;
+        return root.next;
     }
 
-    class ListNode {
+    static class ListNode {
         int val;
         ListNode next;
 
