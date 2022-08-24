@@ -7,50 +7,24 @@ import java.util.Set;
  * 2022-02-19每日打卡第17题 目标（500题）
  */
 public class Solution {
-
-    // 额外空间
-//    public ListNode detectCycle(ListNode head) {
-//        Set<ListNode> set = new HashSet<>();
-//        while (head != null) {
-//            if (set.contains(head)) {
-//                return head;
-//            }
-//
-//            set.add(head);
-//            head = head.next;
-//        }
-//        return null;
-//    }
-
-    // 进阶
+    
     public ListNode detectCycle(ListNode head) {
-        if (head == null) {
-            return null;
-        }
-        ListNode quick = head;
-        ListNode slow = head;
-
-        while (quick != null) {
-            slow = slow.next;
-            if (quick.next != null) {
-                quick = quick.next.next;
+        ListNode pos = head;
+        Set<ListNode> set = new HashSet<>();
+        while (pos != null) {
+            if (set.contains(pos)) {
+                return pos;
             } else {
-                return null;
+                set.add(pos);
             }
-            if (quick == slow) {
-                ListNode ptr = head;
-                while (ptr != slow) {
-                    ptr = ptr.next;
-                    slow = slow.next;
-                }
 
-                return ptr;
-            }
+            pos = pos.next;
         }
+
         return null;
     }
 
-    class ListNode {
+    static class ListNode {
         int val;
         ListNode next;
 
