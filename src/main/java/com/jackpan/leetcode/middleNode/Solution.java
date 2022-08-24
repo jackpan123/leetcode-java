@@ -1,29 +1,29 @@
 package com.jackpan.leetcode.middleNode;
 
 /**
- *
  * 2022-02-23每日打卡第23题 目标（500题）
  */
 public class Solution {
 
     public ListNode middleNode(ListNode head) {
-        ListNode newHead = head;
         int length = 0;
-        while (head != null) {
+        ListNode node = head;
+        while (node != null) {
             length++;
-            head = head.next;
+            node = node.next;
         }
 
         int index = length / 2;
-        while (index != 0) {
-            newHead = newHead.next;
+        node = head;
+        while (index > 0) {
+            node = node.next;
             index--;
         }
 
-        return newHead;
+        return node;
     }
 
-    class ListNode {
+    static class ListNode {
         int val;
         ListNode next;
 
