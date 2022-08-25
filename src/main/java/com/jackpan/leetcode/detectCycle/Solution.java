@@ -7,7 +7,7 @@ import java.util.Set;
  * 2022-02-19每日打卡第17题 目标（500题）
  */
 public class Solution {
-    
+
     public ListNode detectCycle(ListNode head) {
         ListNode pos = head;
         Set<ListNode> set = new HashSet<>();
