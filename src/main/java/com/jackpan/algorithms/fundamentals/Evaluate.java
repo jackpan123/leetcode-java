@@ -6,7 +6,7 @@ import edu.princeton.cs.algs4.StdOut;
 
 /**
  * Evaluate操作类
- *
+ * Test example ( ( 1 + sqrt ( 5.0 ) ) / 2.0 )
  * @author JackPan
  * @date 2022/10/12 13:04
  **/
