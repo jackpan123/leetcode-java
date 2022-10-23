@@ -12,28 +12,24 @@ public class Solution {
 
         StringBuilder sb = new StringBuilder();
 
-        int len = Math.min(word1.length(), word2.length());
-
         int i = 0;
-        while (i < len) {
-            sb.append(word1.charAt(i));
-            sb.append(word2.charAt(i));
-            i++;
-        }
+        int j = 0;
+        int n = word1.length();
+        int m = word2.length();
 
-        if (i < word1.length() - 1) {
-            sb.append(word1.substring(i));
-        } else {
-            sb.append(word2.substring(i));
+        while (i < n || j < m) {
+            if (i < n) {
+                sb.append(word1.charAt(i));
+                i++;
+            }
+
+            if (j < m) {
+                sb.append(word2.charAt(j));
+                j++;
+            }
         }
 
         return sb.toString();
     }
 
-    public static void main(String[] args) {
-        Solution solution = new Solution();
-        System.out.println(solution.mergeAlternately("abcdn", "azia"));
-//        System.out.println(solution.mergeAlternately("ab", "pqrs"));
-//        System.out.println(solution.mergeAlternately("abcd", "pq"));
-    }
 }
