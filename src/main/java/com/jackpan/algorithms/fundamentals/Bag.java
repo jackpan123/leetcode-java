@@ -1,5 +1,7 @@
 package com.jackpan.algorithms.fundamentals;
 
+import edu.princeton.cs.algs4.LinkedBag;
+import edu.princeton.cs.algs4.ResizingArrayBag;
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
 
@@ -101,6 +103,7 @@ public class Bag<Item> implements Iterable<Item> {
             return current != null;
         }
 
+        @Override
         public void remove() {
             throw new UnsupportedOperationException();
         }
