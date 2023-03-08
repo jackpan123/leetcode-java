@@ -1,4 +1,4 @@
-//package com.jackpan.algorithms.fundamentals;
+package com.jackpan.algorithms.fundamentals;
 
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdOut;
