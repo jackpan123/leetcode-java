@@ -15,6 +15,7 @@ public class Triangle {
     public int minimumTotal(List<List<Integer>> triangle) {
         int n = triangle.size();
         int m = triangle.get(n - 1).size();
+        
         Integer[][] dp = new Integer[n][m];
         dp[0][0] = triangle.get(0).get(0);
         for (int i = 1; i < n; i++) {
@@ -39,8 +40,8 @@ public class Triangle {
             }
         }
 
-        int res = Integer.MAX_VALUE;
-        for (int i = 0; i < m; i++) {
+        int res = dp[n - 1][0];
+        for (int i = 1; i < m; i++) {
             if (dp[n - 1][i] != null) {
                 res = Math.min(res, dp[n - 1][i]);
             }
